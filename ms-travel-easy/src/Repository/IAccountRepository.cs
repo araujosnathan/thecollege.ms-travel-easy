@@ -11,6 +11,8 @@ namespace ms_travel_easy.src.Repository
         Task<Account?> GetAsync(string email);
 
         Task CreateAsync(Account newAccount);
+
+        Task UpdateAsync(Account newAccount);  
     }
 }
 

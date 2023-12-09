@@ -32,6 +32,16 @@ namespace ms_travel_easy.src.Repository
 
         public async Task CreateAsync(Account newAccount) =>
             await _accountCollection.InsertOneAsync(newAccount);
+
+        public async Task UpdateAsync(Account updatedAccount)
+        {
+            var filter = Builders<Account>.Filter.Eq(x => x.AccountId, updatedAccount.AccountId);
+            var updateDefinition = Builders<Account>.Update
+                .Set(x => x.LastName, updatedAccount.LastName)
+                .Set(x => x.PhoneNumber, updatedAccount.PhoneNumber);
+
+            await _accountCollection.UpdateOneAsync(filter, updateDefinition);
+        }
     }
 }
 

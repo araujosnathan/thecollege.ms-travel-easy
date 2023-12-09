@@ -24,6 +24,9 @@ namespace ms_travel_easy.src.Services
 
         public async Task CreateAccountAsync(Account newAccount) =>
             await _accountRepository.CreateAsync(newAccount);
+
+        public async Task UpdateAccountAsync(Account newAccount) =>
+           await _accountRepository.UpdateAsync(newAccount);
     }
 }
 

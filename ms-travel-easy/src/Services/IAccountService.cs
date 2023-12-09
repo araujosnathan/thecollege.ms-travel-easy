@@ -12,6 +12,8 @@ namespace ms_travel_easy.src.Services
         Task<Account?> GetAccountByEmailAsync(string email);
 
         Task CreateAccountAsync(Account newAccount);
+
+        Task UpdateAccountAsync(Account account);
     }
 }
 

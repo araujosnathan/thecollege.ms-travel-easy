@@ -45,6 +45,25 @@ namespace ms_travel_easy.src.Controllers
             return Created("", newAccount);
 
         }
+
+        [HttpPatch("{email}")]
+        public async Task<ActionResult<Account>> UpdateAccount(string email, [FromBody] AccountUpdateRequest updatePayload)
+        {
+            var existingAccount = await _accountsService.GetAccountByEmailAsync(email);
+
+            if (existingAccount == null)
+            {
+                return NotFound();
+            }
+
+            // Update only the specified fields
+            existingAccount.LastName = updatePayload.LastName ?? existingAccount.LastName;
+            existingAccount.PhoneNumber = updatePayload.PhoneNumber ?? existingAccount.PhoneNumber;
+
+            await _accountsService.UpdateAccountAsync(existingAccount);
+
+            return Ok(existingAccount);
+        }
     }
 }
 
