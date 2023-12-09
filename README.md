@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="imgs/logo.png" width="300" alt="Descrição da Imagem">
+</p>
+
 # thecollege.ms-travel-easy
 
 The primary objective of this project is to learn and practice using Git commands while developing/testing.
