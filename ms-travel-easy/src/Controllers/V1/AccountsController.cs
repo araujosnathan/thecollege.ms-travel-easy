@@ -33,16 +33,31 @@ namespace ms_travel_easy.src.Controllers
         [HttpPost]
         public async Task<ActionResult<Account>> Post(AccountRequest accountRequest)
         {
-            Account newAccount = new Account
+            var account = await _accountsService.GetAccountByEmailAsync(accountRequest.Email);
+
+            if (account is null)
             {
-                AccountId = Guid.NewGuid().ToString("D"),
-                Name = accountRequest.Name,
-                LastName = accountRequest.LastName,
-                Email = accountRequest.Email,
-                PhoneNumber = accountRequest.PhoneNumber
-            };
-            await _accountsService.CreateAccountAsync(newAccount);
-            return Created("", newAccount);
+                Account newAccount = new Account
+                {
+                    AccountId = Guid.NewGuid().ToString("D"),
+                    Name = accountRequest.Name,
+                    LastName = accountRequest.LastName,
+                    Email = accountRequest.Email,
+                    PhoneNumber = accountRequest.PhoneNumber
+                };
+                await _accountsService.CreateAccountAsync(newAccount);
+                return Created("", newAccount);
+
+            }
+            else
+            {
+                var conflictResponse = new
+                {
+                    Message = "Account with this email already exists.",
+                    ErrorCode = "CONFLICT_EMAIL"
+                };
+                return Conflict(conflictResponse);
+            }
 
         }
     }
