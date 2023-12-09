@@ -1,4 +1,42 @@
-﻿<Properties StartupConfiguration="{977E18EF-7DBA-4954-8532-CBCFB39E53C2}|https">
-  <MonoDevelop.Ide.ItemProperties.ms-travel-easy FirstBuild="True" />
+﻿<Properties StartupConfiguration="{977E18EF-7DBA-4954-8532-CBCFB39E53C2}|http">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Properties/launchSettings.json">
+    <Files>
+      <File FileName="src/Controllers/V1/AccountsController.cs" Line="51" Column="1" />
+      <File FileName="src/Models/Account.cs" />
+      <File FileName="src/Services/IAccountService.cs" />
+      <File FileName="src/Services/AccountService.cs" />
+      <File FileName="src/Repository/AccountRepository.cs" />
+      <File FileName="src/Repository/IAccountRepository.cs" />
+      <File FileName="Properties/launchSettings.json" Line="15" Column="30" />
+      <File FileName="Program.cs" Line="29" Column="12" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ms-travel-easy">
+            <Node name="ms-travel-easy">
+              <Node name="Properties">
+                <Node name="launchSettings.json" selected="True" />
+              </Node>
+              <Node name="src" expanded="True">
+                <Node name="Controllers" expanded="True">
+                  <Node name="V1" expanded="True" />
+                </Node>
+                <Node name="Models" expanded="True" />
+                <Node name="Repository" expanded="True" />
+                <Node name="Services" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ms-travel-easy PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
 </Properties>
