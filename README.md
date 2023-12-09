@@ -1,4 +1,6 @@
-![](imgs/logo.png)
+<p align="center">
+  <img src="imgs/logo.png" width="300" alt="Descrição da Imagem">
+</p>
 
 # thecollege.ms-travel-easy
 
